@@ -1,0 +1,39 @@
+{
+  "name": "start-here",
+  "version": "1.0.0",
+  "description": "Boilerplate for simple projects",
+  "main": "index.html",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jhoow13/start-here.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "start-here",
+    "simple-projects"
+  ],
+  "author": "joelcsilva@outlook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jhoow13/start-here/issues"
+  },
+  "homepage": "https://github.com/Jhoow13/start-here#readme"
+}
