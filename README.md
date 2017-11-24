@@ -43,5 +43,5 @@ On the gulpfile you'll find the folders and files on the *appFiles* object. Any 
 
 > *My workflow is in development and might have some changes in the future*
 
-[1]:[https://eslint.org/]
-[2]:[https://github.com/airbnb/javascript]
+[1]: [https://eslint.org/]
+[2]: [https://github.com/airbnb/javascript]
