@@ -16,12 +16,18 @@ You'll need NodeJS and Gulp to fire up a localhost server that will automaticall
   - less files
 - src
   - where the compiled files will be
+- .editorconfig
+- .eslintrc.json
 - .gitignore
 - gulpfile.js
 - index.html
 - package.json
 - README.md
 
+
+## npm scripts
+
+- **npm run lint** - runs [ESLint][1] using the [Airbnb][2] styleguide to check errors on js files.
 
 ## Gulp tasks
 
@@ -36,3 +42,6 @@ On the gulpfile you'll find the folders and files on the *appFiles* object. Any 
 
 
 > *My workflow is in development and might have some changes in the future*
+
+[1][https://eslint.org/]
+[2][https://github.com/airbnb/javascript]
