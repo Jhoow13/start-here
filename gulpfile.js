@@ -1,9 +1,10 @@
-var gulp = require("gulp"),
+const gulp = require("gulp"),
   browserSync = require("browser-sync").create(),
   plumber = require("gulp-plumber"),
   notify = require("gulp-notify"),
   clean = require("gulp-clean"),
   concat = require("gulp-concat"),
+  babel = require("gulp-babel"),
   uglify = require("gulp-uglify"),
   pug = require("gulp-pug"),
   sass = require("gulp-sass"),
@@ -12,7 +13,7 @@ var gulp = require("gulp"),
   (sourcemaps = require("gulp-sourcemaps")),
   (imageMin = require("gulp-imagemin"));
 
-var files = {
+const files = {
   pugFiles: ["src/index.pug"],
   scssFiles: ["src/sass/all.scss"],
   jsFiles: ["src/js/*.js"],
@@ -26,7 +27,16 @@ gulp.task("clean", function() {
 gulp.task("pug", function() {
   return gulp
     .src(files.pugFiles)
-    .pipe(plumber())
+    .pipe(
+      plumber({
+        errorHandler: function(err) {
+          notify.onError({
+            title: "Erro ali > " + err.plugin,
+            message: err.toString()
+          })(err);
+        }
+      })
+    )
     .pipe(
       pug({
         pretty: true
@@ -71,7 +81,21 @@ gulp.task("css-prod", function() {
 gulp.task("js", function() {
   return gulp
     .src(files.jsFiles)
-    .pipe(plumber())
+    .pipe(
+      plumber({
+        errorHandler: function(err) {
+          notify.onError({
+            title: "Erro ali > " + err.plugin,
+            message: err.toString()
+          })(err);
+        }
+      })
+    )
+    .pipe(
+      babel({
+        presets: ["@babel/env"]
+      })
+    )
     .pipe(uglify())
     .pipe(concat("main.min.js"))
     .pipe(gulp.dest("dist/js/"));
@@ -80,7 +104,16 @@ gulp.task("js", function() {
 gulp.task("img", function() {
   gulp
     .src(files.imgFiles)
-    .pipe(plumber())
+    .pipe(
+      plumber({
+        errorHandler: function(err) {
+          notify.onError({
+            title: "Erro ali > " + err.plugin,
+            message: err.toString()
+          })(err);
+        }
+      })
+    )
     .pipe(imageMin())
     .pipe(gulp.dest("dist/img"));
 });
